@@ -13,7 +13,7 @@ namespace BinarySearchTree
         public node rchild;
 
         //constructor for the node class
-        static node(string i, node l, node r)
+        public node(string i, node l, node r)
         {
             info = i;
             lchild = l;
@@ -46,7 +46,7 @@ namespace BinarySearchTree
                 }
                 else if (string.Compare(element,parent.info) <0)
                 {
-                    if(string.Compare(element, parent, info) <0)
+                    if(string.Compare(element, parent.info) <0)
                         parent.lchild = tmp;
                 }
                 else
@@ -108,6 +108,23 @@ namespace BinarySearchTree
                 postorder(ptr.lchild);
                 postorder(ptr.rchild);
                 Console.WriteLine(ptr.info + "");
+            }
+        }
+        static void Main(string[] args)
+        {
+            BinaryTree x = new BinaryTree();
+            while(true)
+            {
+                Console.WriteLine("\nMenu");
+                Console.WriteLine("1. Implement insert operation");
+                Console.WriteLine("2. Perform inorder traversal");
+                Console.WriteLine("3. Perform preorder traversal");
+                Console.WriteLine("4. Perform postorder traversal");
+                Console.WriteLine("5. Exit");
+                Console.WriteLine("\nEnter your choice (1-5) :");
+                char ch = Convert.ToChar(Console.ReadLine());
+                Console.WriteLine();
+                switch(ch)
             }
         }
     }
